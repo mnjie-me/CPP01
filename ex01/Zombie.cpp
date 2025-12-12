@@ -6,17 +6,20 @@
 /*   By: mari-cruz <mari-cruz@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 14:05:23 by mari-cruz         #+#    #+#             */
-/*   Updated: 2025/11/19 20:56:28 by mari-cruz        ###   ########.fr       */
+/*   Updated: 2025/12/12 11:34:33 by mari-cruz        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie() : name(""){}
+Zombie::Zombie() : name("")
+{
+	std::cout << "Default zombie created" << std::endl;
+}
 
 Zombie::~Zombie()
 {
-	std::cout << name << " destroyed" << std::endl;
+	std::cout << "Zombie " << name << " destroyed" << std::endl;
 }
 
 void	Zombie::announce(void)

@@ -6,7 +6,7 @@
 /*   By: mari-cruz <mari-cruz@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:14:22 by mari-cruz         #+#    #+#             */
-/*   Updated: 2025/11/19 20:44:48 by mari-cruz        ###   ########.fr       */
+/*   Updated: 2025/12/11 17:41:10 by mari-cruz        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,4 @@ class Zombie
 		void	setName(std::string name);
 };
 
-Zombie* zombieHorde( int N, std::string name );
+Zombie* zombieHorde(int N, std::string name);
