@@ -6,19 +6,13 @@
 /*   By: mari-cruz <mari-cruz@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 11:43:51 by mari-cruz         #+#    #+#             */
-/*   Updated: 2025/11/22 12:15:03 by mari-cruz        ###   ########.fr       */
+/*   Updated: 2025/12/12 13:28:34 by mari-cruz        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-Harl::Harl()
-{
-	table["debug"] = &Harl::debug;
-	table["info"] = &Harl::info;
-	table["warning"] = &Harl::warning;
-	table["error"] = &Harl::error;
-}
+Harl::Harl() {}
 
 Harl::~Harl() {}
 
@@ -48,8 +42,14 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
-	if (table.count(level))
-		(this->*table[level])();
+	std::string levels[] = {"debug", "info", "warning", "error"};
+	void (Harl::*functions[])() = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+
+    int i = 0;
+    while (i < 4 && levels[i] != level)
+		i++;
+	if (i < 4)
+		(this->*functions[i])();
 	else
 		std::cout << "Command not found" << std::endl;
 }

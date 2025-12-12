@@ -6,7 +6,7 @@
 /*   By: mari-cruz <mari-cruz@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 10:59:58 by mari-cruz         #+#    #+#             */
-/*   Updated: 2025/11/22 12:13:56 by mari-cruz        ###   ########.fr       */
+/*   Updated: 2025/12/12 13:30:25 by mari-cruz        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ class Harl
 {
 	private:
 
-		std::map<std::string, void(Harl::*)()>table;
-		
 		void debug( void );
 		void info( void );
 		void warning( void );
@@ -32,5 +30,5 @@ class Harl
 		Harl();
 		~Harl();
 		
-		void complain( std::string level );
+		void complain(std::string level);
 };
