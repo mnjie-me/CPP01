@@ -6,7 +6,7 @@
 /*   By: mari-cruz <mari-cruz@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:38:30 by mari-cruz         #+#    #+#             */
-/*   Updated: 2025/12/12 12:41:01 by mari-cruz        ###   ########.fr       */
+/*   Updated: 2025/12/12 12:57:28 by mari-cruz        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,6 @@ void Sed::process()
 		std::string new_line;
 		size_t pos = 0;
 		size_t found;
-		if (found == std::string::npos)
-		{
-			std::cout << "No coincidence found" << std::endl;
-			return ;
-		}
 		while ((found = line.find(s1, pos)) != std::string::npos)
 		{
 			new_line += line.substr(pos, found - pos);
