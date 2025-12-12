@@ -6,7 +6,7 @@
 /*   By: mari-cruz <mari-cruz@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:38:30 by mari-cruz         #+#    #+#             */
-/*   Updated: 2025/11/21 13:52:58 by mari-cruz        ###   ########.fr       */
+/*   Updated: 2025/12/12 12:41:01 by mari-cruz        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,31 @@ void Sed::process()
 	std::ofstream newFile((file + ".replace").c_str());
 	if (!newFile.is_open())
 	{
-		std::cout << "Could not opne new file!" << std::endl;
+		std::cout << "Could not opne the new file!" << std::endl;
+		return ;
+	}
+	if (s1.empty())
+	{
+		std::cout << "Nothing to change" << std::endl;
 		return ;
 	}
 	while (std::getline(oldFile, line))
 	{
-		std::string		new_line("");
-		size_t i = 0;
-		while (i < line.length())
+		std::string new_line;
+		size_t pos = 0;
+		size_t found;
+		if (found == std::string::npos)
 		{
-			size_t j = 0;
-			while (j < s1.length() && i + j < line.length() && line[i + j] == s1[j])
-				j++;
-			if (j == s1.length())
-			{
-				new_line += s2;
-				i += j;	
-			}
-			else
-			{
-				new_line += line[i];
-				i++;
-			}
+			std::cout << "No coincidence found" << std::endl;
+			return ;
 		}
+		while ((found = line.find(s1, pos)) != std::string::npos)
+		{
+			new_line += line.substr(pos, found - pos);
+			new_line += s2;
+			pos = found + s1.length();
+		}
+		new_line += line.substr(pos);
 		newFile << new_line << std::endl;
 	}
 	oldFile.close();
