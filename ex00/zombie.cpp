@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mari-cruz <mari-cruz@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mnjie-me <mnjie-me@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:41:43 by mari-cruz         #+#    #+#             */
-/*   Updated: 2025/11/19 13:23:43 by mari-cruz        ###   ########.fr       */
+/*   Updated: 2025/12/15 16:52:03 by mnjie-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie() : name("") {}
 
 Zombie::Zombie(std::string n) : name(n)
 {
